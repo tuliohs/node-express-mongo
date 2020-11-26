@@ -21,4 +21,33 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/v1/subscribers/5fadb9b34474204f06337872
+DELETE http://localhost:3000/v1/subscribers/5fadb9b34474204f06337873
+
+###
+GET http://localhost:3000/v1/candidates
+
+###
+GET http://localhost:3000/v1/candidates/5fadb9b34474204f06337873
+
+###
+POST http://localhost:3000/v1/candidates
+Content-Type: application/json
+
+{
+    "nome": "Dunha",
+    "partido": "democratico",
+    "numero": "5026",
+    "votos": "2",
+    "status": "SUSPENSO"
+}
+
+###
+PATCH http://localhost:3000/v1/candidates/5fadb9b34474204f06337873
+Content-Type: application/json
+
+{
+    "nome": "Tinga"
+}
+
+###
+DELETE http://localhost:3000/v1/candidates/5fadb9b34474204f06337873

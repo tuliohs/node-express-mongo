@@ -25,8 +25,11 @@ router.get('/:id', getCandidates, async (req, res) => {
 router.post('/', async (req, res) => {
 
     const candidates = new Candidates({
-        name: req.body.name,
-        channel: req.body.channel
+        nome: req.body.nome,
+        partido: req.body.partido,
+        numero: req.body.numero,
+        votos: req.body.votos,
+        status: req.body.status
     })
 
     try {
@@ -40,13 +43,15 @@ router.post('/', async (req, res) => {
 
 // PATCH update
 router.patch('/:id', getCandidates, async (req, res) => {
-    if (req.body.name != null) {
-        res.candidates.name = req.body.name
-    }
+    if (req.body.nome != null) { res.candidates.nome = req.body.nome }
 
-    if (req.body.channel != null) {
-        res.candidates.channel = req.body.channel
-    }
+    if (req.body.partido != null) { res.candidates.partido = req.body.partido }
+
+    if (req.body.numero != null) { res.candidates.numero = req.body.numero }
+
+    if (req.body.votos != null) { res.candidates.votos = req.body.votos }
+
+    if (req.body.status != null) { res.candidates.status = req.body.status }
 
     try {
         const updated = await res.candidates.save()
