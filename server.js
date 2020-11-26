@@ -29,5 +29,8 @@ app.use(express.json())
 const subscribersRouter = require('./routes/subscribers')
 app.use('/v1/subscribers', subscribersRouter)
 
+//Adicionando a Rota candidatos
+const candidatesRouter = require('./routes/candidates')
+app.use('/v1/candidates', candidatesRouter)
 
 app.listen(3000, () => console.log('Server started.'))
